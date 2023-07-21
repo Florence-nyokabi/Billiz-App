@@ -89,7 +89,7 @@
             android:id="@+id/etEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autoLink="email"
+            android:autoLink="all|email"
             android:background="#FFFFFF"
             android:fontFamily="sans-serif"
             android:hint="Enter Email Address" />
@@ -178,7 +178,7 @@
         android:layout_marginBottom="30dp"
         android:fontFamily="sans-serif"
         android:text="Sign Up"
-        android:textColor="#00000F"
+        android:textColor="#090909"
         android:textColorHighlight="#FF9800"
         android:textColorHint="#FFFFFF"
         android:textColorLink="#E91E63"
@@ -188,29 +188,18 @@
         app:layout_constraintTop_toBottomOf="@+id/tilConfirmPassword"
         app:layout_constraintVertical_bias="0.24000001" />
 
-    <TextView
-        android:id="@+id/tvAlreadyHaveAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Already have an account? "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSignUp"
-        app:layout_constraintVertical_bias="0.18" />
-
     <Button
         android:id="@+id/btnLogIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:fontFamily="sans-serif"
         android:text="Log In"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAlreadyHaveAccount"
-        app:layout_constraintVertical_bias="0.88" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSignUp"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ProgressBar
         android:id="@+id/pbRegister"

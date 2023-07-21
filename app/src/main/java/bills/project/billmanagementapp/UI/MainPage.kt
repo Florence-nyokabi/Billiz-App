@@ -4,13 +4,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import bills.project.billmanagementapp.R
 import bills.project.billmanagementapp.databinding.ActivityMainBinding
+import bills.project.billmanagementapp.databinding.ActivityMainPageBinding
 
 class MainPage : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+    lateinit var binding: ActivityMainPageBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityMainBinding.inflate(layoutInflater)
+
         super.onCreate(savedInstanceState)
+        binding = ActivityMainPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
 

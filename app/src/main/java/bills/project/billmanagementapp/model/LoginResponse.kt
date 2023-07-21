@@ -2,5 +2,6 @@ package bills.project.billmanagementapp.model
 
 data class LoginResponse(
     var message: String,
-    var user: User
+    var access_token: String,
+    var user_id: String
 )
