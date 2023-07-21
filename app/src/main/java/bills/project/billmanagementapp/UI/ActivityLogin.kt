@@ -33,8 +33,6 @@ class ActivityLogin : AppCompatActivity() {
         binding.btnLoggingIn.setOnClickListener {
             clearLogInErrors()
             validateLogIn()
-            val intent = Intent(this, MainPage::class.java)
-            startActivity(intent)
         }
         loginUserViewModel.errLiveData.observe(this, Observer { err->
             Toast.makeText(this, err, Toast.LENGTH_SHORT).show()
