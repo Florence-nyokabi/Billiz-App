@@ -38,12 +38,11 @@ class ActivityLogin : AppCompatActivity() {
             Toast.makeText(this, err, Toast.LENGTH_SHORT).show()
             binding.pbLogin.visibility = View.GONE
         })
-        loginUserViewModel.regLiveData.observe(this, Observer { regResponse->
+        loginUserViewModel.regLiveData.observe(this, Observer { logResponse->
             binding.pbLogin.visibility = View.GONE
-            Toast.makeText(this, regResponse.message, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, logResponse.message, Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, MainPage::class.java))
         })
-
     }
 
     fun validateLogIn(){
