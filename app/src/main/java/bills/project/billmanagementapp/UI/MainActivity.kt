@@ -1,9 +1,11 @@
 package bills.project.billmanagementapp.UI
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import bills.project.billmanagementapp.databinding.ActivityMainBinding
+import bills.project.billmanagementapp.utils.Constants
 import com.squareup.picasso.Picasso
 
 class MainActivity : AppCompatActivity() {
@@ -12,8 +14,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
+        redirectUser()
     }
 
     override fun onResume() {
@@ -30,4 +32,15 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    fun redirectUser(){
+        val sharedPrefs = getSharedPreferences(Constants.PREFS, Context.MODE_PRIVATE)
+        val userId = sharedPrefs.getString(Constants.USER_ID, Constants.EMPTY_STRING)
+        if (userId.isNullOrBlank()){
+            startActivity(Intent(this, ActivityLogin::class.java))
+        }else{
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+    }
+
 }

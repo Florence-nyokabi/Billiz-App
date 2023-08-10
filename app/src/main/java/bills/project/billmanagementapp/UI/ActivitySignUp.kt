@@ -54,7 +54,7 @@ class ActivitySignUp : AppCompatActivity() {
 
         var error  = false
 
-        if (firstName.isEmpty()){
+        if (firstName.isBlank()){
             binding.tilFirstName.error = "Please input first name"
             error = true
         }

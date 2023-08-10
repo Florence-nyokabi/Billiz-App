@@ -1,6 +1,7 @@
 
 package bills.project.billmanagementapp.UI
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,6 +14,8 @@ import bills.project.billmanagementapp.ViewModel.UserViewModel
 import bills.project.billmanagementapp.databinding.ActivityLoginBinding
 import bills.project.billmanagementapp.model.LoginRequest
 import bills.project.billmanagementapp.model.RegisterRequest
+import bills.project.billmanagementapp.model.LoginResponse
+import bills.project.billmanagementapp.utils.Constants
 
 class ActivityLogin : AppCompatActivity() {
 
@@ -39,9 +42,11 @@ class ActivityLogin : AppCompatActivity() {
             binding.pbLogin.visibility = View.GONE
         })
         loginUserViewModel.regLiveData.observe(this, Observer { logResponse->
+            persistLogin(logResponse)
             binding.pbLogin.visibility = View.GONE
             Toast.makeText(this, logResponse.message, Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, MainPage::class.java))
+            finish()
         })
     }
 
@@ -73,4 +78,13 @@ class ActivityLogin : AppCompatActivity() {
         binding.tilEmail.error = null
         binding.tilPassword.error = null
     }
+
+    fun persistLogin(loginResponse: LoginResponse){
+        val sharedPrefs = getSharedPreferences(Constants.PREFS, Context.MODE_PRIVATE)
+        val editor = sharedPrefs.edit()
+        editor.putString(Constants.USER_ID, loginResponse.userId)
+        editor.putString(Constants.ACCESS_TOKEN, loginResponse.accessToken)
+        editor.apply()
+    }
+
 }
