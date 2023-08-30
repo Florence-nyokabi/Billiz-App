@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Bill Management App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="summary">" "</string>
+    <string name="add_bill">Add Bill</string>
+    <string name="add_billz">Add Bill</string>
 </resources>
