@@ -139,7 +139,9 @@ class AddBillActivity : AppCompatActivity() {
         binding.etName.setText(Constants.EMPTY_STRING)
         binding.etAmount.setText(Constants.EMPTY_STRING)
         binding.spFrequency.setSelection(0)
+
         showSpinner()
+
         binding.spDueDate.setSelection(0)
     }
 
