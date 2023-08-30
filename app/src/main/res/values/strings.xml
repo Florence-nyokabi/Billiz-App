@@ -5,4 +5,8 @@
     <string name="summary">" "</string>
     <string name="add_bill">Add Bill</string>
     <string name="add_billz">Add Bill</string>
+    <string name="frequency">Frequency</string>
+    <string name="amount">Amount</string>
+    <string name="due_date">Due Date</string>
+    <string name="bill_name">Bill Name</string>
 </resources>

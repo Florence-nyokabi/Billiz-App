@@ -11,5 +11,5 @@ data class Bill(
     var amount: Double,
     var frequency: String,
     var dueDate: String,
-    var useId: String
+    var userId: String
 )
