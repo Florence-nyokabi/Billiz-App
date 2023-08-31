@@ -10,6 +10,8 @@ import androidx.activity.viewModels
 import bills.project.BillzApp.ViewModel.BillzViewModel
 import bills.project.BillzApp.databinding.ActivityAddBillBinding
 import bills.project.BillzApp.model.Bill
+import bills.project.BillzApp.R.string
+
 import bills.project.BillzApp.utils.Constants
 import java.util.Calendar
 import java.util.UUID
@@ -88,14 +90,14 @@ class AddBillActivity : AppCompatActivity() {
 
     fun setupDpDueDate() {
         val cal = Calendar.getInstance()
-//        binding.dpDueDate.init(
-//            cal.get(Calendar.YEAR),
-//            cal.get(Calendar.MONTH),
-//            cal.get(Calendar.DAY_OF_MONTH)
-//        ) { _, _, month, date ->
-//            selectedDate = date
-//            selectedMonth = month+1
-//        }
+        binding.dpDueDate.init(
+            cal.get(Calendar.YEAR),
+            cal.get(Calendar.MONTH),
+            cal.get(Calendar.DAY_OF_MONTH)
+        ) { _, _, month, date ->
+            selectedDate = date
+            selectedMonth = month+1
+        }
     }
 
     fun validateBill(){
@@ -111,12 +113,12 @@ class AddBillActivity : AppCompatActivity() {
         var error = false
         if(name.isBlank()){
             error = true
-//            binding.etName.error = getString(string.name_req)
+            binding.etName.error = getString(string.bill_name)
         }
 
         if(amount.isBlank()){
             error = true
-//            binding.etName.error = getString(string.amount_req)
+            binding.etName.error = getString(string.amount)
         }
 
         if(!error){
