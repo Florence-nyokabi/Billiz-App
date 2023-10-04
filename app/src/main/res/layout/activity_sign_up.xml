@@ -72,7 +72,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilEmailAddress"
+        android:id="@+id/tilemail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -106,7 +106,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvSignUp"
-        app:layout_constraintVertical_bias="0.44">
+        app:layout_constraintVertical_bias="0.44"
+        tools:ignore="DuplicateIds">
 
 
         <com.google.android.material.textfield.TextInputEditText

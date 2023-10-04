@@ -32,17 +32,21 @@ class ActivityLogin : AppCompatActivity() {
         super.onResume()
         setContentView(binding.root)
 
-        binding.btnLoggingIn.setOnClickListener {
+        binding.btnlogin.setOnClickListener {
             clearLogInErrors()
             validateLogIn()
         }
+        binding.tvSignUp.setOnClickListener {
+            startActivity(Intent(this@ActivityLogin, ActivitySignUp::class.java))
+        }
+
         loginUserViewModel.errLiveData.observe(this, Observer { err->
             Toast.makeText(this, err, Toast.LENGTH_SHORT).show()
-            binding.pbLogin.visibility = View.GONE
+            binding.pbProgressBar.visibility = View.GONE
         })
         loginUserViewModel.regLiveData.observe(this, Observer { logResponse->
             persistLogin(logResponse)
-            binding.pbLogin.visibility = View.GONE
+            binding.pbProgressBar.visibility = View.GONE
             Toast.makeText(this, logResponse.message, Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, MainPage::class.java))
             finish()
@@ -51,12 +55,12 @@ class ActivityLogin : AppCompatActivity() {
 
     fun validateLogIn(){
         val emailAddress = binding.etEmail.text.toString()
-        val password = binding.etPassword.text.toString()
+        val password = binding.etpassword.text.toString()
 
         var error = false
 
         if (emailAddress.isBlank()){
-            binding.tilEmail.error = "Please input user name"
+            binding.tilemail.error = "Please input user name"
             error = true
         }
         if (password.isBlank()){
@@ -68,13 +72,13 @@ class ActivityLogin : AppCompatActivity() {
                 email = emailAddress,
                 password = password
             )
-            binding.pbLogin.visibility = View.VISIBLE
+            binding.pbProgressBar.visibility = View.VISIBLE
             loginUserViewModel.loginUser(loginRequest)
         }
     }
 
     fun clearLogInErrors(){
-        binding.tilEmail.error = null
+        binding.tilemail.error = null
         binding.tilPassword.error = null
     }
 

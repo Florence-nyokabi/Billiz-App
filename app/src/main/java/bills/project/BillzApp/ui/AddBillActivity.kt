@@ -23,7 +23,6 @@ class AddBillActivity : AppCompatActivity() {
     var selectedDate = 0
     var selectedMonth = 0
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityAddBillBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -136,19 +135,15 @@ class AddBillActivity : AppCompatActivity() {
             clearForm()
         }
     }
-
     fun clearForm(){
         binding.etName.setText(Constants.EMPTY_STRING)
         binding.etAmount.setText(Constants.EMPTY_STRING)
         binding.spFrequency.setSelection(0)
 
         showSpinner()
-
         binding.spDueDate.setSelection(0)
     }
-
 }
-
     fun View.show(){
         this.visibility = View.VISIBLE
     }

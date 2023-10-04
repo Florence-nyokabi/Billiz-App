@@ -62,7 +62,7 @@ class ActivitySignUp : AppCompatActivity() {
             error = true
         }
         if(emailAddress.isEmpty()){
-            binding.tilEmailAddress.error = "Please input email address"
+            binding.tilemail.error = "Please input email address"
             error = true
         }
         if(phoneNumber.isEmpty()){
@@ -101,7 +101,7 @@ class ActivitySignUp : AppCompatActivity() {
     fun clearErrors(){
         binding.tilFirstName.error = null
         binding.tilLastName.error = null
-        binding.tilEmailAddress.error = null
+        binding.tilemail.error = null
         binding.tilPassword.error = null
         binding.tilConfirmPassword.error = null
     }

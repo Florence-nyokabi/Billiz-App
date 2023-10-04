@@ -41,6 +41,6 @@ class MainActivity : AppCompatActivity() {
         }else{
             startActivity(Intent(this, MainActivity::class.java))
         }
-    }
 
+    }
 }

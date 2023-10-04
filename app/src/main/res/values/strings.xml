@@ -9,4 +9,6 @@
     <string name="amount">Amount</string>
     <string name="due_date">Due Date</string>
     <string name="bill_name">Bill Name</string>
+    <string name="amounts">20000</string>
+    <string name="monthly">MONTHLY</string>
 </resources>

@@ -2,12 +2,15 @@ package bills.project.BillzApp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import bills.project.BillzApp.R
+import bills.project.BillzApp.ViewModel.BillzViewModel
 import bills.project.BillzApp.databinding.ActivityMainPageBinding
 
 
 class MainPage : AppCompatActivity() {
     lateinit var binding: ActivityMainPageBinding
+    val billzViewModel: BillzViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -19,6 +22,8 @@ class MainPage : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         setContentView(binding.root)
+        setupBottomNav()
+        billzViewModel.createUpcomingBills()
     }
 
     fun setupBottomNav(){
@@ -34,7 +39,7 @@ class MainPage : AppCompatActivity() {
                 R.id.upcoming->{
                     supportFragmentManager
                         .beginTransaction()
-//                        .replace(R.id.fcvHome, UpcomingBillFragment())
+                        .replace(R.id.fcvHome, UpcomingBillsFragment())
                         .commit()
                     true
                 }
@@ -52,7 +57,6 @@ class MainPage : AppCompatActivity() {
                         .replace(R.id.fcvHome, SettingsFragment())
                         .commit()
                     true
-
                 }
                 else->false
             }
