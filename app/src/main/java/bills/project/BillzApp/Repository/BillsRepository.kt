@@ -2,11 +2,13 @@ package com.kevine.billzapplication.repository
 
 import android.content.Context
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import bills.project.BillzApp.API.ApiClient
 import bills.project.BillzApp.API.ApiInterface
 import bills.project.BillzApp.BillzApp
 import bills.project.BillzApp.database.BillzDb
 import bills.project.BillzApp.model.Bill
+import bills.project.BillzApp.model.BillsSummary
 import bills.project.BillzApp.model.UpcomingBill
 import bills.project.BillzApp.utils.Constants
 import bills.project.BillzApp.utils.DateTimeUtils
@@ -16,7 +18,7 @@ import java.util.Calendar
 import java.util.UUID
 
 
-// thingd in dao come here
+// These are the things in the Dao
 class BillsRepo {
     var db = BillzDb.getDatabase(BillzApp.appContext)
     val billsDao = db.billDao()
@@ -169,6 +171,21 @@ class BillsRepo {
                     upcomingBillsDao.updateUpcomingBill(upcomingBill)
                 }
             }
+        }
+    }
+
+
+    suspend fun getMonthlySummary():MutableLiveData<BillsSummary>{
+        return withContext(Dispatchers.IO){
+            val startDate = DateTimeUtils.getFirstDayOfMonth()
+            val endDate = DateTimeUtils.getLastDayOfMonth()
+            val today = DateTimeUtils.getDateToday()
+            val paid = upcomingBillsDao.getPaidMonthlyBillsSum(startDate, endDate)
+            val upcoming = upcomingBillsDao.getUpcomingBillsThisMonth(startDate, endDate, today)
+            val total = upcomingBillsDao.getTotalMonthlyBills(startDate, endDate)
+            val overdue = upcomingBillsDao.getOverdueBillsThisMonth(startDate, endDate, today)
+            val summary = BillsSummary(paid=paid, upcoming=upcoming, overdue=overdue, total=total)
+            MutableLiveData(summary)
         }
     }
 }

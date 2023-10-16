@@ -68,5 +68,8 @@ class DateTimeUtils {
             val formatter = DecimalFormat("KES #,###.##")
             return  formatter.format(amount)
         }
+        fun getDateToday():String{
+            return formatDate(LocalDateTime.now())
+        }
     }
 }

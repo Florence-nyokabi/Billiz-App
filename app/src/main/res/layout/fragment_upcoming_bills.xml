@@ -20,14 +20,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvWeekly"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="373dp"
+        android:layout_height="135dp"
         android:layout_marginStart="18dp"
-        tools:listitem="@layout/upcoming_bills_list_item"
         android:layout_marginEnd="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWeekly" />
+        app:layout_constraintTop_toBottomOf="@+id/tvWeekly"
+        tools:listitem="@layout/upcoming_bills_list_item" />
 
     <TextView
         android:id="@+id/rvMonthly"

@@ -60,11 +60,11 @@ class ActivityLogin : AppCompatActivity() {
         var error = false
 
         if (emailAddress.isBlank()){
-            binding.tilemail.error = "Please input user name"
+            binding.tilemail.error = "Please Enter Your Phone Number"
             error = true
         }
         if (password.isBlank()){
-            binding.tilPassword.error = "Please input password"
+            binding.tilPassword.error = "Please Enter Your Password "
             error = true
         }
         if(!error){

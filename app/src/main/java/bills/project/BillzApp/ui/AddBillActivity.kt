@@ -1,6 +1,7 @@
 package bills.project.BillzApp.ui
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -35,6 +36,9 @@ class AddBillActivity : AppCompatActivity() {
 
         binding.btnSaveBill.setOnClickListener {
             validateBill()
+        }
+        binding.ivback.setOnClickListener{
+            startActivity(Intent(this, MainPage::class.java))
         }
     }
 
