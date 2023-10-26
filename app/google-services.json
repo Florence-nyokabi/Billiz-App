@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "545727242725",
+    "project_id": "billiz",
+    "storage_bucket": "billiz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:545727242725:android:0526e3a07962b195838f0c",
+        "android_client_info": {
+          "package_name": "bills.project.billzapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD8weWKsNzZk27UbYkIn1Pn1v2Rt_QhRQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

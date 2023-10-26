@@ -3,48 +3,51 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <CheckBox
-        android:id="@+id/cbUpcoming"
+        android:id="@+id/Checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Electricity"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvamount"
+        app:layout_constraintHorizontal_bias="0.21"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042" />
+        tools:text="Electricity" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.65" />
+        app:layout_constraintGuide_percent="0.64" />
+
 
     <TextView
-        android:id="@+id/tvAmount"
+        android:id="@+id/tvamount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/amounts"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="96dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.058" />
+        tools:text="20000" />
 
     <TextView
         android:id="@+id/tvDuedate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:text="15 May 2023"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbUpcoming"
-        app:layout_constraintVertical_bias="0.029"
-        tools:text="15 May 2023" />
+        app:layout_constraintTop_toBottomOf="@+id/Checkbox" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

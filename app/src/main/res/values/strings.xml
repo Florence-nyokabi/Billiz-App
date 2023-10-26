@@ -11,4 +11,9 @@
     <string name="bill_name">Bill Name</string>
     <string name="amounts">20000</string>
     <string name="monthly">MONTHLY</string>
+    <string name="bills_summary" />
+    <string name="annual" />
+    <string name="upcoming_bills" />
+    <string name="weekly" />
+    <string name="quarterly" />
 </resources>
