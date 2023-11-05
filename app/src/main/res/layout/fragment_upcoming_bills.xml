@@ -28,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="@string/upcoming_bills"
+                android:text="Upcoming Bills"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </androidx.appcompat.widget.Toolbar>
@@ -50,13 +50,13 @@
             android:id="@+id/rvweekly"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            tools:listitem="@layout/upcoming_bills_list_item"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvweekly" />
+            app:layout_constraintTop_toBottomOf="@+id/tvweekly"
+            tools:listitem="@layout/upcoming_bills_list_item" />
 
         <TextView
             android:id="@+id/tvmonthly"
